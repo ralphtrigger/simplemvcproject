@@ -1,6 +1,6 @@
 <?php
 
-/* 
+/*
  * Copyright 2016 trigger.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,8 +16,22 @@
  * limitations under the License.
  */
 
-require 'models/model.php';
-
-$articles = get_articles();
-
-require 'views/view.php';
+function get_articles() {
+// Database parameters
+    $servername = 'localhost';
+    $user = 'test_user';
+    $pwd = 'secret';
+    $dbname = 'testdb';
+    $port = '3306';
+// create connection
+    $conn = mysqli_connect($servername, $user, $pwd, $dbname, $port);
+    if (!$conn) {
+        die('Could not connect to MySQL: ' . mysqli_connect_error());
+    }
+// get articles from database
+    $sql = 'select * from article order by art_id desc';
+    $articles = mysqli_query($conn, $sql);
+// close connection
+    mysqli_close($conn);
+    return $articles;
+}
