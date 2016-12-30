@@ -1,0 +1,13 @@
+{
+    "name": "vendor/simple-m-v-c-project",
+    "description": "Description of project SimpleMVCProject.",
+    "authors": [
+        {
+            "name": "trigger",
+            "email": "trigger.courses@gmail.com"
+        }
+    ],
+    "require": {
+        "silex/silex" : "~2.0"
+    }
+}

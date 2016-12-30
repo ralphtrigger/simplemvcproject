@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-function get_articles() {
+function getArticles() {
 // Database parameters
     $servername = 'localhost';
     $user = 'test_user';

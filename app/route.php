@@ -16,8 +16,17 @@
  * limitations under the License.
  */
 
-require 'models/model.php';
-
-$articles = get_articles();
-
-require 'views/view.php';
+// Home page
+$app->get('/', function(){
+    require '../src/model.php';
+    
+    $articles = getArticles();
+    
+    ob_start(); // start buffering html output
+    
+    require '../views/view.php';
+    
+    $view = ob_get_clean(); // Assign HTML ouput to $view
+    
+    return $view;
+});
