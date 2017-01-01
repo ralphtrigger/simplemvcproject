@@ -29,8 +29,8 @@ limitations under the License.
         foreach ($articles as $article):
             ?>
             <article>
-                <h1><?php echo $article['art_title'] ?></h1>
-                <p><?php echo $article['art_content'] ?></p>
+                <h1><?php echo $article->getTitle() ?></h1>
+                <p><?php echo $article->getContent() ?></p>
             </article>
         <?php endforeach; ?>
         <footer id="footer">

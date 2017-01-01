@@ -1,6 +1,6 @@
 <?php
 
-/* 
+/*
  * Copyright 2016 trigger.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,13 +16,12 @@
  * limitations under the License.
  */
 
-require_once __DIR__.'/../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 $app = new Silex\Application();
 
-// Enable debug mode
-$app['debug'] = true;
-
-require __DIR__.'/../app/route.php';
+require __DIR__ . '/../app/config/dev.php';
+require __DIR__ . '/../app/app.php';
+require __DIR__ . '/../app/route.php';
 
 $app->run();

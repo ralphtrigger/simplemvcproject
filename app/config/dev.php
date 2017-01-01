@@ -1,7 +1,7 @@
 <?php
 
 /* 
- * Copyright 2016 trigger.
+ * Copyright 2017 trigger.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,17 +16,8 @@
  * limitations under the License.
  */
 
-// Home page
-$app->get('/', function() use ($app){
-    require '../src/model.php';
-    
-    $articles = $app['dao.article']->findAll();
-    
-    ob_start(); // start buffering html output
-    
-    require '../views/view.php';
-    
-    $view = ob_get_clean(); // Assign HTML ouput to $view
-    
-    return $view;
-});
+// Include the prod configuration
+require __DIR__.'/prod.php';
+
+// Enable the debug mode
+$app['debug'] = true;
