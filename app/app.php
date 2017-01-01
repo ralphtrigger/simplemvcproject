@@ -25,9 +25,12 @@ ExceptionHandler::register();
 
 // Register service providers.
 $app->register(new Silex\Provider\DoctrineServiceProvider());
+$app->register(new Silex\Provider\TwigServiceProvider(), array(
+    'twig.path' => __DIR__ . '/../views',
+));
 
 // Register services.
 $app['dao.article'] = function ($app) {
-  return new simplemvcproject\DAO\ArticleDAO($app['db']);  
+    return new simplemvcproject\DAO\ArticleDAO($app['db']);
 };
 

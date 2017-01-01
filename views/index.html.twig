@@ -1,3 +1,4 @@
+{# empty Twig template #}
 <!DOCTYPE html>
 <!--
 Copyright 2016 trigger.
@@ -24,15 +25,12 @@ limitations under the License.
         <header>
             <h1>Simple MVC Project</h1>
         </header>
-        <?php
-        // display articles
-        foreach ($articles as $article):
-            ?>
+        {% for article in articles%}
             <article>
-                <h1><?php echo $article->getTitle() ?></h1>
-                <p><?php echo $article->getContent() ?></p>
+                <h2>{{ article.title }}</h2>
+                <p>{{ article.content }}</p>
             </article>
-        <?php endforeach; ?>
+        {% endfor %}
         <footer id="footer">
             <a href="https://github.com/ralphtrigger/simplemvcproject">
                 SimpleMVCProject

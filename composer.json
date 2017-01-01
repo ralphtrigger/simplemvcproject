@@ -9,7 +9,8 @@
     ],
     "require": {
         "silex/silex": "~2.0",
-        "doctrine/dbal": "~2.5"
+        "doctrine/dbal": "v2.5.5",
+        "twig/twig": "v1.30.0"
     },
 
     "autoload": {

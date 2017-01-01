@@ -1,6 +1,6 @@
 <?php
 
-/* 
+/*
  * Copyright 2016 trigger.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,16 +17,10 @@
  */
 
 // Home page
-$app->get('/', function() use ($app){
+$app->get('/', function() use ($app) {
     require '../src/model.php';
-    
+
     $articles = $app['dao.article']->findAll();
-    
-    ob_start(); // start buffering html output
-    
-    require '../views/view.php';
-    
-    $view = ob_get_clean(); // Assign HTML ouput to $view
-    
-    return $view;
+
+    return $app['twig']->render('index.html.twig', array('articles' => $articles));
 });
