@@ -17,6 +17,11 @@ limitations under the License.
     Created on : Dec 17, 2016, 11:52:59 AM
     Author     : trigger
 */
+
+body {
+    padding-top: 50px;
+}
+
 #footer{
     border-top: 1px solid #ccc;
     padding-top: 10px;
