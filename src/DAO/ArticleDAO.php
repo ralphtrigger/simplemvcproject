@@ -16,32 +16,17 @@
  * limitations under the License.
  */
 
-namespace simplemvcproject\DAO;
+namespace SimpleMVCProject\DAO;
 
 use Doctrine\DBAL\Connection;
-use simplemvcproject\Domain\Article;
+use SimpleMVCProject\Domain\Article;
 
 /**
  * Description of ArticleDAO
  *
  * @author trigger
  */
-class ArticleDAO {
-    /**
-     * Database Connection.
-     * 
-     * @var \Doctrine\DBAL\Connection
-     */
-    private $db;
-
-    /**
-     * Constructor.
-     * 
-     * @param \Doctrine\DBAL\Connection $db
-     */
-    public function __construct($db) {
-        $this->db = $db;
-    }
+class ArticleDAO extends DAO {
 
     /**
      * Return a list of all articles, sorted by date (most recent first).
@@ -50,25 +35,43 @@ class ArticleDAO {
      */
     public function findAll() {
         $sql = "select * from article order by art_id desc";
-        $result = $this->db->fetchAll($sql);
+        $result = $this->getDB()->fetchAll($sql);
 
         // Convert query result to an array of domain objects
         $articles = array();
         foreach ($result as $row) {
             $articleId = $row['art_id'];
-            $articles[$articleId] = $this->buildArticle($row);
+            $articles[$articleId] = $this->buildObjectDomain($row);
         }
 
         return $articles;
     }
 
     /**
+     * Return an article matching the supplied id.
+     * 
+     * @param integer $id
+     * @return \SimpleMVCProject\Domain\Article
+     * @throws Exception if no matching article is found
+     */
+    public function find($id) {
+        $sql = "select * from article where art_id=?";
+        $row = $this->getDB()->fetchAssoc($sql, array($id));
+
+        if ($row) {
+            return $this->buildObjectDomain($row);
+        } else {
+            throw new Exception("No article matching id " . $id);
+        }
+    }
+
+    /**
      * Create an article object base on a DB row.
      * 
      * @param array $row The DB row containing Article data.
-     * @return \simplemvcproject\Domain\Article
+     * @return \SimpleMVCProject\Domain\Article
      */
-    private function buildArticle(array $row) {
+    protected function buildObjectDomain(array $row) {
         $article = new Article();
         $article->setId($row['art_id']);
         $article->setTitle($row['art_title']);

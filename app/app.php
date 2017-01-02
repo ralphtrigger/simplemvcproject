@@ -34,6 +34,11 @@ $app->register(new Silex\Provider\AssetServiceProvider(), array(
 
 // Register services.
 $app['dao.article'] = function ($app) {
-    return new simplemvcproject\DAO\ArticleDAO($app['db']);
+    return new SimpleMVCProject\DAO\ArticleDAO($app['db']);
+};
+$app['dao.comment'] = function ($app) {
+    $commentDAO = new SimpleMVCProject\DAO\CommentDAO($app['db']);
+    $commentDAO->setArticleDAO($app['dao.article']);
+    return $commentDAO;
 };
 

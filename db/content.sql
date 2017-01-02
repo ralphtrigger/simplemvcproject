@@ -45,3 +45,9 @@ Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat.
 Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna 
 nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea 
 dictumst.');
+
+INSERT INTO comment
+VALUES (1, 'John Doe', 'Great! Keep up the good work.', 1);
+
+INSERT INTO comment
+VALUES (2, 'Ann Yone', "Thank you, I'll try my best.", 1);

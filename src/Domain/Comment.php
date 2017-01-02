@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright 2016 trigger.
+ * Copyright 2017 trigger.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,43 +19,49 @@
 namespace SimpleMVCProject\Domain;
 
 /**
- * Description of Article
+ * Description of Comment
  *
  * @author trigger
  */
-class Article {
-
+class Comment {
     /**
-     * Article id.
+     * Comment id.
      * 
      * @var integer
      */
     private $id;
-
     /**
-     * Article title.
+     * Comment author.
      * 
      * @var string
      */
-    private $title;
-
+    private $author;
     /**
-     * Article content.
+     * Comment content.
      * 
      * @var string
      */
     private $content;
+    /**
+     *
+     * @var \SimpleMVCProject\Domain\Article
+     */
+    private $article;
 
     public function getId() {
         return $this->id;
     }
 
-    public function getTitle() {
-        return $this->title;
+    public function getAuthor() {
+        return $this->author;
     }
 
     public function getContent() {
         return $this->content;
+    }
+
+    public function getArticle() {
+        return $this->article;
     }
 
     public function setId($id) {
@@ -63,13 +69,18 @@ class Article {
         return $this;
     }
 
-    public function setTitle($title) {
-        $this->title = $title;
+    public function setAuthor($author) {
+        $this->author = $author;
         return $this;
     }
 
     public function setContent($content) {
         $this->content = $content;
+        return $this;
+    }
+
+    public function setArticle($article) {
+        $this->article = $article;
         return $this;
     }
 

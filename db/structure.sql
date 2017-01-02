@@ -17,8 +17,20 @@
  * Author:  trigger
  * Created: Dec 16, 2016
  */
+
+DROP TABLE IF EXISTS comment;
+DROP TABLE IF EXISTS article;
+
 create table article (
     art_id integer not null primary key auto_increment,
     art_title varchar(100) not null,
     art_content varchar(1000) not null
-);
+)engine=innodb character set utf8 collate utf8_unicode_ci;
+
+CREATE TABLE comment (
+    com_id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    com_author VARCHAR(100) NOT NULL,
+    com_content VARCHAR(500) NOT NULL,
+    art_id INTEGER NOT NULL,
+    CONSTRAINT fk_com_art FOREIGN KEY(art_id) REFERENCES article(art_id)    
+)engine=innodb character set utf8 collate utf8_unicode_ci;

@@ -28,3 +28,7 @@ body {
     text-align: center;
     /*font-size: small;*/
 }
+
+.articleTitle:hover, .articleTitle:focus {
+    text-decoration: none;
+}
