@@ -39,7 +39,31 @@ limitations under the License.
                         <a class="navbar-brand" href="">Simple MVC Project</a>
                     </div>
                     <div class="collapse navbar-collapse" id="navbar-collapse-target">
-                        
+                        <ul class="nav navbar-nav navbar-right">
+                            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" 
+                                       data-toggle="dropdown">
+                                        <span class="glyphicon glyphicon-user"></span>
+                                        Welcome, {{ app.user.username }}<b class="caret"></b>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{ path('logout') }}">Log out</a></li>
+                                    </ul>
+                                </li>
+                            {% else %}
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" 
+                                       data-toggle="dropdown">
+                                        <span class="glyphicon glyphicon-user"></span>
+                                        Not connected<b class="caret"></b>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{ path('login') }}">Log in</a></li>
+                                    </ul>
+                                </li>
+                            {% endif %}
+                        </ul>
                     </div>
                 </div><!-- /.container -->
             </nav>
@@ -51,6 +75,10 @@ limitations under the License.
                 is an introduction to mvc framework for Tle TI students.
             </footer>
         </div>
+        <!-- JQuery -->
+        <script src="{{ asset('/bower_components/jquery/dist/jquery.min.js') }}"></script>
+        <!-- JavaScript Bootstrap plugin -->
+        <script src="{{ asset('/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     </body>
 </html>
 

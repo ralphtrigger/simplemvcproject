@@ -12,7 +12,12 @@
         "doctrine/dbal": "v2.5.5",
         "twig/twig": "v1.30.0",
         "symfony/twig-bridge": "~2.8|3.0.*",
-        "symfony/asset": "~2.8|3.0.*"
+        "symfony/asset": "~2.8|3.0.*",
+        "symfony/security": "~2.8|3.0.*",
+        "symfony/form": "~2.8|3.0.*",
+        "symfony/translation": "~2.8|3.0.*",
+        "symfony/config": "~2.8|3.0.*",
+        "symfony/intl": "v3.2.0"
     },
 
     "autoload": {

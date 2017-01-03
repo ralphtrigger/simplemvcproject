@@ -46,8 +46,17 @@ Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna
 nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea 
 dictumst.');
 
-INSERT INTO comment
-VALUES (1, 'John Doe', 'Great! Keep up the good work.', 1);
+/* raw password is 'john' */
+insert into t_user values
+(1, 'JohnDoe', '$2y$13$F9v8pl5u5WMrCorP9MLyJeyIsOLj.0/xqKd/hqa5440kyeB7FQ8te', 
+'YcM=A$nsYzkyeDVjEUa7W9K', 'ROLE_USER');
+/* raw password is 'jane' */
+insert into t_user values
+(2, 'JaneDoe', '$2y$13$qOvvtnceX.TjmiFn4c4vFe.hYlIVXHSPHfInEG21D99QZ6/LM70xa', 
+'dhMTBkzwDKxnD;4KNs,4ENy', 'ROLE_USER');
 
 INSERT INTO comment
-VALUES (2, 'Ann Yone', "Thank you, I'll try my best.", 1);
+VALUES (1, 'Great! Keep up the good work.', 1, 1);
+
+INSERT INTO comment
+VALUES (2, "Thank you, I'll try my best.", 1, 2);

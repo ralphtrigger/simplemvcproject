@@ -33,7 +33,7 @@ class Comment {
     /**
      * Comment author.
      * 
-     * @var string
+     * @var \SimpleMVCProject\Domain\User
      */
     private $author;
     /**
@@ -69,7 +69,7 @@ class Comment {
         return $this;
     }
 
-    public function setAuthor($author) {
+    public function setAuthor(User $author) {
         $this->author = $author;
         return $this;
     }
