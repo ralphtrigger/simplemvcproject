@@ -1,28 +1,28 @@
 {
-    "name": "vendor/simple-m-v-c-project",
-    "description": "Description of project SimpleMVCProject.",
-    "authors": [
-        {
-            "name": "trigger",
-            "email": "trigger.courses@gmail.com"
-        }
-    ],
-    "require": {
-        "silex/silex": "~2.0",
-        "doctrine/dbal": "v2.5.5",
-        "twig/twig": "v1.30.0",
-        "symfony/twig-bridge": "~2.8|3.0.*",
-        "symfony/asset": "~2.8|3.0.*",
-        "symfony/security": "~2.8|3.0.*",
-        "symfony/form": "~2.8|3.0.*",
-        "symfony/translation": "~2.8|3.0.*",
-        "symfony/config": "~2.8|3.0.*",
-        "symfony/intl": "v3.2.0"
-    },
-
-    "autoload": {
-        "psr-4": {
-            "SimpleMVCProject\\": "src"
-        }
-    }
+	"name" : "vendor/simple-m-v-c-project",
+	"description" : "Description of project SimpleMVCProject.",
+	"authors" : [{
+			"name" : "trigger",
+			"email" : "trigger.courses@gmail.com"
+		}
+	],
+	"require" : {
+		"silex/silex" : "~2.0",
+		"doctrine/dbal" : "v2.5.5",
+		"twig/twig" : "v1.30.0",
+		"symfony/twig-bridge" : "~2.8|3.0.*",
+		"symfony/asset" : "~2.8|3.0.*",
+		"symfony/security" : "~2.8|3.0.*",
+		"symfony/form" : "~2.8|3.0.*",
+		"symfony/translation" : "~2.8|3.0.*",
+		"symfony/config" : "~2.8|3.0.*",
+		"symfony/intl" : "v3.2.0",
+		"twig/extensions" : "~1.4",
+		"symfony/validator" : "~2.8|3.0.*"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"SimpleMVCProject\\" : "src"
+		}
+	}
 }
